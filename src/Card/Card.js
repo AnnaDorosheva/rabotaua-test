@@ -2,21 +2,21 @@ import React from "react";
 import s from "./Card.module.css";
 import banner from "../images/card-banner.png";
 
-const Card = () => {
+const Card = ({status, header, salary, salaryComment, company, city, members, logo}) => {
   return (
     <div className={s.cardContainer}>
       <img src={banner} alt="banner" className={s.banner} />
       <div className={s.cardContainerText}>
-        <p className={s.status}>Status</p>
-        <h2 className={s.vacancy}>Vacansia name jjjjjjjjjj r</h2>
+        <p className={s.status}>{status}</p>
+        <h2 className={s.vacancy}>{header}</h2>
         <p className={s.salary}>
-          Salary<span className={s.salaryComment}>comment</span>
+          {salary}<span className={s.salaryComment}>{salaryComment}</span>
         </p>
-        <img alt="logo company" className={s.logo} />
-        <p className={s.companyName}>company name</p>
-        <p className={s.sity}>town</p>
+        <img alt="logo company" className={s.logo} src={logo}/>
+        <p className={s.companyName}>{company}</p>
+        <p className={s.sity}>{city}</p>
         <div className={s.aboutContainer}>
-        <p className={s.about}>about job</p>
+        <ul className={s.aboutContainer}>{members.map(item => (<li className={s.about}>{item}</li>))}</ul>
         </div>
         <div className={s.buttons}>
           <button type="submit" className={s.addButton}>

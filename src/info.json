@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "status": "new",
+    "header": "Продавец в продуктовый отдел",
+    "salary": "20000 - 25000$",
+    "salaryComment": "по результатам собеседования",
+    "company": "Focus",
+    "city": "Одесса",
+    "members": ["обеды", "английский", "больничные"],
+    "logo": "https://logos-world.net/wp-content/uploads/2020/12/Lays-Logo.png"
+  },
+  {
+    "id": 2,
+    "status": "new",
+    "header": "Менеджер по работе с клиентами",
+    "salary": "12000 - 15000$",
+    "salaryComment": "по договоренности",
+    "company": "Focus",
+    "city": "Kiev",
+    "members": ["обеды", "английский", "больничные"],
+    "logo": "https://image.shutterstock.com/image-vector/dots-letter-c-logo-design-260nw-551769190.jpg"
+  },
+  {
+    "id": 3,
+    "status": "new",
+    "header": "Директор на производство стройматериалов",
+    "salary": "50000 - 55000$",
+    "salaryComment": "в зависимости от опыта и навыков",
+    "company": "Focus",
+    "city": "Kiev",
+    "members": ["обеды", "английский", "больничные"],
+    "logo": "https://img.freepik.com/free-psd/logo-mockup-on-grey-wall_35913-2122.jpg?size=626&ext=jpg&ga=GA1.2.1425803814.1636502400"
+  }
+]

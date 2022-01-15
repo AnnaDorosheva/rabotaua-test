@@ -1,13 +1,13 @@
 import Header from "./Header/Header";
-import Card from "./Card/Card";
 import s from "./App.module.css";
+import CardList from "./CardList/CardList";
 
 function App() {
   return (
     <div className={s.appContainer}>
       <Header />
       <div className={s.cardsContainer}>
-        <Card />
+        <CardList />
       </div>
     </div>
   );

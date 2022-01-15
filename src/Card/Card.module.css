@@ -6,7 +6,6 @@
   font-family: Graphik-Regular-Web;
   width: 750px;
   height: 370px;
-  border: 1px solid black;
   background-color: white;
   padding: 0;
   margin: 0;
@@ -19,9 +18,13 @@
     margin-top: 14px;
 }
 .status {
+  font-size: 14px;
     width: 60px;
     height: 20px;
     color: red;
+    background-color: #FFE9E9;
+    text-align: center;
+    border-radius: 5px;
     margin: 0;
 }
 .vacancy {
@@ -45,6 +48,7 @@
     display: inline-block;
     font-size: 16px;
     line-height: 20px;
+    text-transform: uppercase;
     color: red;
     margin: 0 0 5px 0;
 }
@@ -52,15 +56,17 @@
     display: inline-block;
     margin: 10px 0 0 10px;
 }
-.aboutContainer {
-    margin: 10px 0;
-}
 .about {
     display: inline;
     padding: 5px 10px;
     border: 1px solid #C8D1D6;
     border-radius: 5px;
     margin: 0 10px 0 0;
+}
+.aboutContainer {
+  list-style: none;
+  margin: 10px 0 10px 0;
+  padding: 0;
 }
 /* logo */
 .logo {
