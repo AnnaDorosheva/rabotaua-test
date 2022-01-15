@@ -1,0 +1,13 @@
+.appContainer {
+  background-color: #E5E5E5;
+}
+.cardsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+
+
