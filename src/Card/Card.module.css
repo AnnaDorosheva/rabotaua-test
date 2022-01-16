@@ -10,25 +10,29 @@
   padding: 0;
   margin: 0;
 }
-.banner {
-
-}
 .cardContainerText {
-    padding: 0px 20px 20px 20px;
-    margin-top: 14px;
+  padding: 0px 20px 20px 20px;
+  margin-top: 14px;
 }
 .status {
+  display: inline;
   font-size: 14px;
-    width: 60px;
-    height: 20px;
-    color: red;
-    background-color: #FFE9E9;
-    text-align: center;
-    border-radius: 5px;
-    margin: 0;
+  height: 20px;
+  color: red;
+  background-color: #ffe9e9;
+  text-align: center;
+  border-radius: 5px;
+  padding: 0px 10px;
+  margin: 0;
+}
+.statusDislike {
+  composes: status;
+  color: gray;
+  background-color: rgb(238, 228, 228);
 }
 .vacancy {
   font-family: Graphik-Bold-Web;
+  font-weight: 700;
   font-size: 20px;
   line-height: 30px;
   height: 60px;
@@ -37,65 +41,73 @@
   margin: 10px 0 10px 0;
 }
 .salary {
-    font-size: 16px;
-    line-height: 20px;
-    margin: 0;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0;
 }
 .salaryComment {
-    margin-left: 8px;
+  margin-left: 8px;
 }
 .companyName {
-    display: inline-block;
-    font-size: 16px;
-    line-height: 20px;
-    text-transform: uppercase;
-    color: red;
-    margin: 0 0 5px 0;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: red;
+  margin: 0 0 5px 0;
 }
 .sity {
-    display: inline-block;
-    margin: 10px 0 0 10px;
+  display: inline-block;
+  margin: 10px 0 0 10px;
 }
 .about {
-    display: inline;
-    padding: 5px 10px;
-    border: 1px solid #C8D1D6;
-    border-radius: 5px;
-    margin: 0 10px 0 0;
+  display: inline;
+  padding: 5px 10px;
+  border: 1px solid #c8d1d6;
+  border-radius: 5px;
+  margin: 0;
 }
 .aboutContainer {
+  display: flex;
+  align-items: center;
+  height: 50px;
   list-style: none;
-  margin: 10px 0 10px 0;
+  overflow-y: auto;
+  white-space: nowrap;
   padding: 0;
+  margin: 0;
 }
 /* logo */
-.logo {
+.logoContainer {
   position: absolute;
   left: 610px;
   top: 150px;
-  width: 120px;
-  height: 60px;
+}
+.logo {
+  max-width: 120px;
+  max-height: 60px;
 }
 .time {
-    position: absolute;
-    left: 628px;
-    top: 320px;
-    height: 20px;
-    width: 100px;
-    font-size: 14px;
+  position: absolute;
+  left: 628px;
+  top: 320px;
+  height: 20px;
+  width: 100px;
+  font-size: 14px;
 }
 /* buttons */
 .buttons {
   display: flex;
   width: 300px;
   height: 50px;
-  margin-top: 20px;
+  margin: 0;
 }
 .addButton {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: Graphik-Bold-Web;
+  font-weight: 700;
   color: red;
   background-color: white;
   border: none;
@@ -103,6 +115,11 @@
   width: 144px;
   height: 40px;
   padding: 0;
+}
+.addButton:hover,
+.addButton:focus {
+  background-color: #e5ebee;
+  border-radius: 5px;
 }
 .iconAddBatton {
   width: 20px;
@@ -114,14 +131,30 @@
 }
 
 .favorite,
-.like {
+.unfavorite,
+.like,
+.dislike {
   width: 40px;
   height: 40px;
   margin-left: 20px;
   background-color: white;
   border: none;
 }
-.favorite::before {
+.favorite:hover,
+.favorite:focus,
+.unfavorite:hover,
+.unfavorite:focus,
+.like:hover,
+.like:focus,
+.dislike:hover,
+.dislike:focus {
+  background-color: #e5ebee;
+  border-radius: 5px;
+}
+.favorite::before,
+.unfavorite::before,
+.like::before,
+.dislike::before {
   display: inline-block;
   content: "";
   width: 20px;
@@ -130,12 +163,13 @@
   background-size: contain;
   background-position: center;
 }
+
+.unfavorite::before {
+  background-image: url("../images/follow.png");
+}
 .like::before {
-  display: inline-block;
-  content: "";
-  width: 20px;
-  height: 20px;
   background-image: url("../images/like.png");
-  background-size: contain;
-  background-position: center;
+}
+.dislike::before {
+  background-image: url("../images/dislike.png");
 }

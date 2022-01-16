@@ -5,9 +5,11 @@
     "header": "Продавец в продуктовый отдел",
     "salary": "20000 - 25000$",
     "salaryComment": "по результатам собеседования",
-    "company": "Focus",
+    "company": "Фуршет",
     "city": "Одесса",
-    "members": ["обеды", "английский", "больничные"],
+    "members": ["обеды", "проценты от продаж"],
+    "diselike": false,
+    "follow": false,
     "logo": "https://logos-world.net/wp-content/uploads/2020/12/Lays-Logo.png"
   },
   {
@@ -16,9 +18,11 @@
     "header": "Менеджер по работе с клиентами",
     "salary": "12000 - 15000$",
     "salaryComment": "по договоренности",
-    "company": "Focus",
+    "company": "Citrus",
     "city": "Kiev",
-    "members": ["обеды", "английский", "больничные"],
+    "members": ["обучение за счет компании", "английский с носителями языка", "оплачиваемые больничные", "командировки в Европу"],
+    "diselike": false,
+    "follow": false,
     "logo": "https://image.shutterstock.com/image-vector/dots-letter-c-logo-design-260nw-551769190.jpg"
   },
   {
@@ -29,7 +33,9 @@
     "salaryComment": "в зависимости от опыта и навыков",
     "company": "Focus",
     "city": "Kiev",
-    "members": ["обеды", "английский", "больничные"],
+    "members": ["обеды", "оплачиваемый спортзал", "премии"],
+    "diselike": false,
+    "follow": false,
     "logo": "https://img.freepik.com/free-psd/logo-mockup-on-grey-wall_35913-2122.jpg?size=626&ext=jpg&ga=GA1.2.1425803814.1636502400"
   }
 ]

@@ -1,29 +1,88 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import s from "./Card.module.css";
 import banner from "../images/card-banner.png";
 
-const Card = ({status, header, salary, salaryComment, company, city, members, logo}) => {
+const Card = (props) => {
+  // Follow / unfollow button
+  const [follow, setFollow] = useState({ follow: false, id: null });
+
+  const hendleFollow = (id) => {
+    setFollow((prev) => ({ follow: !prev.follow, id }));
+    if (!follow.follow) {
+      props.onFollow(id);
+    }
+    if (follow.follow) {
+      props.onUnfollow(id);
+    }
+  };
+  // Dislike / Like button
+  const [dislike, setDislike] = useState({ dislike: false, id: null });
+  const hendleLike = (id) => {
+    setDislike((prev) => ({ dislike: !prev.dislike, id }));
+    if (!dislike.dislike) {
+      props.onDislike(id);
+    }
+    if (dislike.dislike) {
+      props.onLike(id);
+    }
+  };
+
+  useEffect(() => {
+    if (props.followedCards.includes(props.id)) {
+      setFollow((prev) => ({ follow: true }));
+    }
+  }, [props.followedCards]);
+
+  useEffect(() => {
+    if (props.dislikedCards.includes(props.id)) {
+      setDislike((prev) => ({ dislike: true }));
+    }
+  }, [props.dislikedCards]);
+
+  // styles
+  const followBtnStyle = follow.follow ? s.unfavorite : s.favorite;
+  const likeBtnStyle = dislike.dislike ? s.dislike : s.like;
+
   return (
     <div className={s.cardContainer}>
       <img src={banner} alt="banner" className={s.banner} />
       <div className={s.cardContainerText}>
-        <p className={s.status}>{status}</p>
-        <h2 className={s.vacancy}>{header}</h2>
+        {dislike.dislike ? (
+          <p className={s.statusDislike}>Неинтересная</p>
+        ) : (<p className={s.status}>{props.status}</p>)}
+        <h2 className={s.vacancy}>{props.header}</h2>
         <p className={s.salary}>
-          {salary}<span className={s.salaryComment}>{salaryComment}</span>
+          {props.salary}
+          <span className={s.salaryComment}>{props.salaryComment}</span>
         </p>
-        <img alt="logo company" className={s.logo} src={logo}/>
-        <p className={s.companyName}>{company}</p>
-        <p className={s.sity}>{city}</p>
+        <div className={s.logoContainer}>
+          <img alt="logo company" className={s.logo} src={props.logo} />
+        </div>
+        <p className={s.companyName}>{props.company}</p>
+        <p className={s.sity}>{props.city}</p>
         <div className={s.aboutContainer}>
-        <ul className={s.aboutContainer}>{members.map(item => (<li className={s.about}>{item}</li>))}</ul>
+          <ul className={s.aboutContainer}>
+            {props.members.map((item) => (
+              <li key={item} className={s.about}>
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
         <div className={s.buttons}>
           <button type="submit" className={s.addButton}>
             <i className={s.iconAddBatton}></i>Откликнуться
           </button>
-          <button type="submit" className={s.favorite}></button>
-          <button type="submit" className={s.like}></button>
+          <button
+            type="button"
+            className={followBtnStyle}
+            onClick={() => hendleFollow(props.id)}
+          ></button>
+          <button
+            type="button"
+            className={likeBtnStyle}
+            onClick={() => hendleLike(props.id)}
+          ></button>
         </div>
         <p className={s.time}>time publication</p>
       </div>
