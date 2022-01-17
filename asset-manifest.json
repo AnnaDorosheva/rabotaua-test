@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/rabotaua-test/static/css/main.d9f60c06.css",
+    "main.js": "/rabotaua-test/static/js/main.06a00317.js",
+    "static/js/787.72941ade.chunk.js": "/rabotaua-test/static/js/787.72941ade.chunk.js",
+    "static/media/card-banner.png": "/rabotaua-test/static/media/card-banner.4f37590f5d207b2674e2.png",
+    "index.html": "/rabotaua-test/index.html",
+    "main.d9f60c06.css.map": "/rabotaua-test/static/css/main.d9f60c06.css.map",
+    "main.06a00317.js.map": "/rabotaua-test/static/js/main.06a00317.js.map",
+    "787.72941ade.chunk.js.map": "/rabotaua-test/static/js/787.72941ade.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d9f60c06.css",
+    "static/js/main.06a00317.js"
+  ]
+}
