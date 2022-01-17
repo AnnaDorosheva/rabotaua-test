@@ -45,11 +45,14 @@ const Card = (props) => {
 
   return (
     <div className={s.cardContainer}>
+      {dislike.dislike && <div className={s.dislikeContainer}></div>}
       <img src={banner} alt="banner" className={s.banner} />
       <div className={s.cardContainerText}>
         {dislike.dislike ? (
           <p className={s.statusDislike}>Неинтересная</p>
-        ) : (<p className={s.status}>{props.status}</p>)}
+        ) : (
+          <p className={s.status}>{props.status}</p>
+        )}
         <h2 className={s.vacancy}>{props.header}</h2>
         <p className={s.salary}>
           {props.salary}
@@ -70,9 +73,11 @@ const Card = (props) => {
           </ul>
         </div>
         <div className={s.buttons}>
-          <button type="submit" className={s.addButton}>
-            <i className={s.iconAddBatton}></i>Откликнуться
-          </button>
+          {!dislike.dislike && (
+            <button type="submit" className={s.addButton}>
+              <i className={s.iconAddBatton}></i>Откликнуться
+            </button>
+          )}
           <button
             type="button"
             className={followBtnStyle}

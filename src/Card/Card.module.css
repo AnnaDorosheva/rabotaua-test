@@ -7,8 +7,15 @@
   width: 750px;
   height: 370px;
   background-color: white;
+  border-radius: 5px;
   padding: 0;
   margin: 0;
+}
+.dislikeContainer {
+  position: absolute;
+  z-index: 1;
+  composes: cardContainer;
+  background: rgba(239, 239, 243, 0.6); 
 }
 .cardContainerText {
   padding: 0px 20px 20px 20px;
@@ -156,12 +163,14 @@
 .like::before,
 .dislike::before {
   display: inline-block;
+  position: relative;
   content: "";
   width: 20px;
   height: 20px;
   background-image: url("../images/unfollow.png");
   background-size: contain;
   background-position: center;
+  z-index: 2;
 }
 
 .unfavorite::before {
