@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import s from "./Card.module.css";
 import banner from "../images/card-banner.png";
+import Timer from "../Timer/Timer";
 
 const Card = (props) => {
   // Follow / unfollow button
@@ -46,7 +47,9 @@ const Card = (props) => {
   return (
     <div className={s.cardContainer}>
       {dislike.dislike && <div className={s.dislikeContainer}></div>}
-      <img src={banner} alt="banner" className={s.banner} />
+      <div className={s.bannerContainer}>
+      <img src={props.img} alt="banner" className={s.banner} />
+      </div>
       <div className={s.cardContainerText}>
         {dislike.dislike ? (
           <p className={s.statusDislike}>Неинтересная</p>
@@ -89,7 +92,8 @@ const Card = (props) => {
             onClick={() => hendleLike(props.id)}
           ></button>
         </div>
-        <p className={s.time}>time publication</p>
+        <Timer time={props.time}/>
+        {/* <p className={s.time}>time publication</p> */}
       </div>
     </div>
   );

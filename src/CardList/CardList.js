@@ -4,6 +4,7 @@ import Card from "../Card/Card";
 import info from "../info.json";
 
 const CardList = () => {
+  console.log(info);
   // follow / unfollow button
   const [followedCards, setFollowedCards] = useState([]);
   const handlFollow = (id) => {

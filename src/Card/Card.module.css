@@ -11,11 +11,23 @@
   padding: 0;
   margin: 0;
 }
+.bannerContainer {
+  height: 108px;
+  width: 750px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner {
+  display: block;
+  max-width: 100%;
+}
 .dislikeContainer {
   position: absolute;
   z-index: 1;
   composes: cardContainer;
-  background: rgba(239, 239, 243, 0.6); 
+  background: rgba(239, 239, 243, 0.5);
 }
 .cardContainerText {
   padding: 0px 20px 20px 20px;
@@ -87,20 +99,15 @@
 /* logo */
 .logoContainer {
   position: absolute;
-  left: 610px;
+  right: 20px;
   top: 150px;
+  /* width: 120px;
+  height: 60px;
+  overflow: hidden; */
 }
 .logo {
   max-width: 120px;
   max-height: 60px;
-}
-.time {
-  position: absolute;
-  left: 628px;
-  top: 320px;
-  height: 20px;
-  width: 100px;
-  font-size: 14px;
 }
 /* buttons */
 .buttons {
@@ -147,6 +154,10 @@
   background-color: white;
   border: none;
 }
+/* .unfavorite {
+  composes: favorite;
+  margin-left: 0;
+} */
 .favorite:hover,
 .favorite:focus,
 .unfavorite:hover,

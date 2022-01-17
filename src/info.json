@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "img": "https://lifehacker.ru/wp-content/uploads/2016/05/rabota-v-ofise_1464177844.jpg",
     "status": "new",
     "header": "Продавец в продуктовый отдел",
     "salary": "20000 - 25000$",
@@ -10,10 +11,12 @@
     "members": ["обеды", "проценты от продаж"],
     "diselike": false,
     "follow": false,
+    "time": "January 17 , 2022, 15:20",
     "logo": "https://logos-world.net/wp-content/uploads/2020/12/Lays-Logo.png"
   },
   {
     "id": 2,
+    "img": "https://cdn.pixabay.com/photo/2020/07/08/04/12/work-5382501_960_720.jpg",
     "status": "new",
     "header": "Менеджер по работе с клиентами",
     "salary": "12000 - 15000$",
@@ -23,10 +26,12 @@
     "members": ["обучение за счет компании", "английский с носителями языка", "оплачиваемые больничные", "командировки в Европу"],
     "diselike": false,
     "follow": false,
+    "time": "January 16 , 2022",
     "logo": "https://image.shutterstock.com/image-vector/dots-letter-c-logo-design-260nw-551769190.jpg"
   },
   {
     "id": 3,
+    "img": "https://www.schalipharma.com/wp-content/uploads/2018/05/softmaker_office_2018_herofefff-1200x640.jpg",
     "status": "new",
     "header": "Директор на производство стройматериалов",
     "salary": "50000 - 55000$",
@@ -36,6 +41,7 @@
     "members": ["обеды", "оплачиваемый спортзал", "премии"],
     "diselike": false,
     "follow": false,
+    "time": "January 14 , 2022",
     "logo": "https://img.freepik.com/free-psd/logo-mockup-on-grey-wall_35913-2122.jpg?size=626&ext=jpg&ga=GA1.2.1425803814.1636502400"
   }
 ]
