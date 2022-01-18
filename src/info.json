@@ -11,6 +11,7 @@
     "members": ["обеды", "проценты от продаж"],
     "diselike": false,
     "follow": false,
+    "job": "Продавец",
     "time": "January 17 , 2022, 15:20",
     "logo": "https://logos-world.net/wp-content/uploads/2020/12/Lays-Logo.png"
   },
@@ -27,6 +28,7 @@
     "diselike": false,
     "follow": false,
     "time": "January 16 , 2022",
+    "job": "Менеджер по работе с клиентами",
     "logo": "https://image.shutterstock.com/image-vector/dots-letter-c-logo-design-260nw-551769190.jpg"
   },
   {
@@ -42,6 +44,7 @@
     "diselike": false,
     "follow": false,
     "time": "January 14 , 2022",
+    "job": "Исполнительный директор",
     "logo": "https://img.freepik.com/free-psd/logo-mockup-on-grey-wall_35913-2122.jpg?size=626&ext=jpg&ga=GA1.2.1425803814.1636502400"
   }
 ]

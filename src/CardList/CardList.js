@@ -28,6 +28,19 @@ const CardList = () => {
       );
     }
   };
+  // Button "Откликнуться":
+  const [respondedCards, setRespondedCards] = useState([]);
+  const handRespond = (id) => {
+    setRespondedCards((prev) => [...prev, id]);
+  };
+  const handlUnrespond = (id) => {
+    if (dislikedCards !== []) {
+      setRespondedCards((prev) =>
+        prev.filter((cardId) => cardId !== id)
+      );
+    }
+  };
+  
   // Local Storage
   useEffect(() => {
     const followedCads = localStorage.getItem("followedCards");
@@ -60,6 +73,9 @@ const CardList = () => {
               onDislike={handleDislike}
               onLike={handleLike}
               dislikedCards={dislikedCards}
+              onRespond={handRespond}
+              onUnrespond={handlUnrespond}
+              respondedCards={respondedCards}
             />
           </li>
         ))}

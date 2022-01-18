@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import s from "./Card.module.css";
-import banner from "../images/card-banner.png";
 import Timer from "../Timer/Timer";
+import Uploader from "../Uploader/Uploader";
 
 const Card = (props) => {
-  // Follow / unfollow button
+  // Follow / unfollow button state:
   const [follow, setFollow] = useState({ follow: false, id: null });
 
   const hendleFollow = (id) => {
@@ -16,7 +16,7 @@ const Card = (props) => {
       props.onUnfollow(id);
     }
   };
-  // Dislike / Like button
+  // Dislike / Like button state:
   const [dislike, setDislike] = useState({ dislike: false, id: null });
   const hendleLike = (id) => {
     setDislike((prev) => ({ dislike: !prev.dislike, id }));
@@ -27,7 +27,20 @@ const Card = (props) => {
       props.onLike(id);
     }
   };
+  // Button "Откликнуться" state:
+  const [respond, setRespond] = useState(false);
+  const [urlImg, setUrlImg] = useState(null);
 
+  const handleRespond = (id) => {
+    setRespond((prev) => !prev);
+    if (respond) {
+      props.onUnrespond(id);
+    }
+    if (!respond) {
+      props.onRespond(id);
+    }
+  };
+  // get state from locasalStorage:
   useEffect(() => {
     if (props.followedCards.includes(props.id)) {
       setFollow((prev) => ({ follow: true }));
@@ -40,22 +53,27 @@ const Card = (props) => {
     }
   }, [props.dislikedCards]);
 
-  // styles
+  // styles:
   const followBtnStyle = follow.follow ? s.unfavorite : s.favorite;
   const likeBtnStyle = dislike.dislike ? s.dislike : s.like;
 
   return (
     <div className={s.cardContainer}>
-      {dislike.dislike && <div className={s.dislikeContainer}></div>}
+      {/* add or not no active background */}
+      {dislike.dislike || respond ? (
+        <div className={s.dislikeContainer}></div>
+      ) : null}
       <div className={s.bannerContainer}>
-      <img src={props.img} alt="banner" className={s.banner} />
+        <img src={props.img} alt="banner" className={s.banner} />
       </div>
       <div className={s.cardContainerText}>
-        {dislike.dislike ? (
-          <p className={s.statusDislike}>Неинтересная</p>
-        ) : (
+        {/* change status */}
+        {dislike.dislike && <p className={s.statusDislike}>Неинтересная</p>}
+        {urlImg && <p className={s.statusRespond}>Вы откликнулись</p>}
+        {!dislike.dislike && !respond && (
           <p className={s.status}>{props.status}</p>
         )}
+
         <h2 className={s.vacancy}>{props.header}</h2>
         <p className={s.salary}>
           {props.salary}
@@ -75,9 +93,14 @@ const Card = (props) => {
             ))}
           </ul>
         </div>
+
+        {/* Buttons */}
         <div className={s.buttons}>
-          {!dislike.dislike && (
-            <button type="submit" className={s.addButton}>
+          {!dislike.dislike && !respond && (
+            <button
+              className={s.addButton}
+              onClick={() => handleRespond(props.id)}
+            >
               <i className={s.iconAddBatton}></i>Откликнуться
             </button>
           )}
@@ -91,9 +114,27 @@ const Card = (props) => {
             className={likeBtnStyle}
             onClick={() => hendleLike(props.id)}
           ></button>
+
+          {/* Uploader for resume */}
+          {respond && !urlImg ? <Uploader setUrlImg={setUrlImg} /> : null}
+          {respond && urlImg ?(
+            <div className={s.resume}>
+              <span>Отправлен файл </span>
+              <a
+                href={urlImg}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={s.resumeLink}
+              >
+                "{props.job}"
+              </a>
+            </div>
+          ) : null}
         </div>
-        <Timer time={props.time}/>
-        {/* <p className={s.time}>time publication</p> */}
+
+        {/* timer */}
+        <Timer time={props.time} />
+        {/* <Uploader1 /> */}
       </div>
     </div>
   );
