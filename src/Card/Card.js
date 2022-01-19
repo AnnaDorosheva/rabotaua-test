@@ -27,6 +27,8 @@ const Card = (props) => {
       props.onLike(id);
     }
   };
+  // Uloader:
+  // const [isUploader, setUploader] = useState(false);
   // Button "Откликнуться" state:
   const [respond, setRespond] = useState(false);
   const [urlImg, setUrlImg] = useState(null);
@@ -35,11 +37,22 @@ const Card = (props) => {
     setRespond((prev) => !prev);
     if (respond) {
       props.onUnrespond(id);
+      // setUploader(true);
     }
     if (!respond) {
       props.onRespond(id);
     }
   };
+
+  useEffect(() => {
+    if (urlImg) {
+      props.onAddSummary(props.id, urlImg);
+    }
+    // if(!urlImg) {
+    //   props.onDeletSummary(props.id)
+    // }
+  }, [urlImg]);
+
   // get state from locasalStorage:
   useEffect(() => {
     if (props.followedCards.includes(props.id)) {
@@ -52,6 +65,18 @@ const Card = (props) => {
       setDislike((prev) => ({ dislike: true }));
     }
   }, [props.dislikedCards]);
+
+  useEffect(() => {
+    if (props.respondedCards.includes(props.id)) {
+      setRespond((prev) => true);
+    }
+  }, [props.respondedCards]);
+
+  useEffect(() => {
+    props.summary.filter((item) =>
+      item.id === props.id ? setUrlImg(item.img) : null
+    );
+  }, [props.summary]);
 
   // styles:
   const followBtnStyle = follow.follow ? s.unfavorite : s.favorite;
@@ -116,10 +141,12 @@ const Card = (props) => {
           ></button>
 
           {/* Uploader for resume */}
-          {respond && !urlImg ? <Uploader setUrlImg={setUrlImg} /> : null}
-          {respond && urlImg ?(
+          {respond && !urlImg ? (
+            <Uploader setUrlImg={setUrlImg} id={props.id} />
+          ) : null}
+          {respond && urlImg ? (
             <div className={s.resume}>
-              <span>Отправлен файл </span>
+              <span>Отправлено резюме </span>
               <a
                 href={urlImg}
                 target="_blank"
@@ -134,7 +161,6 @@ const Card = (props) => {
 
         {/* timer */}
         <Timer time={props.time} />
-        {/* <Uploader1 /> */}
       </div>
     </div>
   );

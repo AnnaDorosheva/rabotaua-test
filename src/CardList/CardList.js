@@ -11,9 +11,7 @@ const CardList = () => {
   };
   const handleUnfollow = (id) => {
     if (followedCards !== []) {
-      setFollowedCards((prev) =>
-        prev.filter((cardId) => cardId !== id)
-      );
+      setFollowedCards((prev) => prev.filter((cardId) => cardId !== id));
     }
   };
   // like / dislike button
@@ -23,9 +21,7 @@ const CardList = () => {
   };
   const handleLike = (id) => {
     if (dislikedCards !== []) {
-      setDislikedCards((prev) =>
-        prev.filter((cardId) => cardId !== id)
-      );
+      setDislikedCards((prev) => prev.filter((cardId) => cardId !== id));
     }
   };
   // Button "Откликнуться":
@@ -35,12 +31,20 @@ const CardList = () => {
   };
   const handlUnrespond = (id) => {
     if (dislikedCards !== []) {
-      setRespondedCards((prev) =>
-        prev.filter((cardId) => cardId !== id)
-      );
+      setRespondedCards((prev) => prev.filter((cardId) => cardId !== id));
     }
   };
-  
+  // Saved summarys:
+  const [summary, setSummary] = useState([]);
+  console.log("JSON pars sumary", summary);
+  const handAddSummary = (id, img) => {
+    setSummary((prev) => [...prev, { id, img }]);
+  };
+  const handlDeletSummary = (id) => {
+    // if (summary !== []) {
+    //   setSummary((prev) => prev.filter((cardId) => cardId.id !== id));
+    // }
+  };
   // Local Storage
   useEffect(() => {
     const followedCads = localStorage.getItem("followedCards");
@@ -48,8 +52,18 @@ const CardList = () => {
       setFollowedCards(JSON.parse(followedCads));
     }
     const dislikedCards = localStorage.getItem("dislikedCards");
-    if(dislikedCards) {
+    if (dislikedCards) {
       setDislikedCards(JSON.parse(dislikedCards));
+    }
+    const respondedCards = localStorage.getItem("respondedCards");
+    if (respondedCards) {
+      setRespondedCards(JSON.parse(respondedCards));
+    }
+    const savedResumesJson = localStorage.getItem("summary");
+    console.log("JSON savedsumary", savedResumesJson);
+    if (savedResumesJson) {
+      const savedResumes = JSON.parse(savedResumesJson);
+      setSummary([...savedResumes]);
     }
   }, []);
 
@@ -59,6 +73,12 @@ const CardList = () => {
   useEffect(() => {
     localStorage.setItem("dislikedCards", JSON.stringify(dislikedCards));
   }, [dislikedCards]);
+  useEffect(() => {
+    localStorage.setItem("respondedCards", JSON.stringify(respondedCards));
+  }, [respondedCards]);
+  useEffect(() => {
+    localStorage.setItem("summary", JSON.stringify(summary));
+  }, [summary]);
 
   return (
     <>
@@ -76,6 +96,9 @@ const CardList = () => {
               onRespond={handRespond}
               onUnrespond={handlUnrespond}
               respondedCards={respondedCards}
+              onAddSummary={handAddSummary}
+              onDeletSummary={handlDeletSummary}
+              summary={summary}
             />
           </li>
         ))}
