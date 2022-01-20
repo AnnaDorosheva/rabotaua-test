@@ -45,11 +45,12 @@ const Uploader = (props) => {
 
   return (
     <div className={s.uploader}>
-      <h1>Add your image:</h1>
-      <p>
+      <h1>Добывить резюме</h1>
+      <p className={s.text}>
         Загружаемый файл не должен быть более 2 Мб, допустимый формат .jpeg,
         .jpg, .png.
       </p>
+      
       <Widget
         ref={widgetApi}
         publicKey="ba7aaf87eb519a0b1269"
@@ -58,7 +59,9 @@ const Uploader = (props) => {
         validators={validators}
         localeTranslations={errors}
       />
-      <button onClick={props.setCloseUploader}>Close</button>
+      <div>
+      <button onClick={props.setCloseUploader} className={s.close}>Закрыть</button>
+      </div>
     </div>
   );
 };

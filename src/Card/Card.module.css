@@ -176,9 +176,9 @@
   height: 19px;
   background-image: url("../images/worn.png");
   color: black;
-  background-repit: no-repit;
+  /* background-repit: no-repit;
   background-size: cover;
-  background-position: center;
+  background-position: center; */
   margin: 0 20px 0 20px;
 }
 
