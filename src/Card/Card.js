@@ -32,25 +32,37 @@ const Card = (props) => {
   // Button "Откликнуться" state:
   const [respond, setRespond] = useState(false);
   const [urlImg, setUrlImg] = useState(null);
+  const [errorLoading, setErrorLoading] = useState(null);
+  const [closeUploader, setCloseUploader] = useState(false);
 
   const handleRespond = (id) => {
     setRespond((prev) => !prev);
     if (respond) {
+      // setCloseUploader(true);
       props.onUnrespond(id);
-      // setUploader(true);
     }
     if (!respond) {
+      setCloseUploader(false);
       props.onRespond(id);
     }
+  };
+  const onSetUrlImg = (img) => {
+    setErrorLoading(null);
+    setUrlImg(img);
+  };
+  const setError = (error) => {
+    setRespond((prev) => !prev);
+    setErrorLoading(error);
+  };
+  const onCloseUploader = () => {
+    setRespond((prev) => !prev);
+    setCloseUploader(true);
   };
 
   useEffect(() => {
     if (urlImg) {
       props.onAddSummary(props.id, urlImg);
     }
-    // if(!urlImg) {
-    //   props.onDeletSummary(props.id)
-    // }
   }, [urlImg]);
 
   // get state from locasalStorage:
@@ -121,14 +133,25 @@ const Card = (props) => {
 
         {/* Buttons */}
         <div className={s.buttons}>
-          {!dislike.dislike && !respond && (
+          {!dislike.dislike && !respond && !errorLoading && !urlImg ? (
             <button
               className={s.addButton}
               onClick={() => handleRespond(props.id)}
             >
               <i className={s.iconAddBatton}></i>Откликнуться
             </button>
-          )}
+          ) : null}
+          {errorLoading ? (
+            <>
+              <button
+                className={s.addButton}
+                onClick={() => handleRespond(props.id)}
+              >
+                <i className={s.iconAddBatton}></i>Откликнуться
+              </button>
+              <div>{errorLoading}</div>
+            </>
+          ) : null}
           <button
             type="button"
             className={followBtnStyle}
@@ -141,10 +164,15 @@ const Card = (props) => {
           ></button>
 
           {/* Uploader for resume */}
-          {respond && !urlImg ? (
-            <Uploader setUrlImg={setUrlImg} id={props.id} />
+          {respond && !urlImg && !closeUploader ? (
+            <Uploader
+              setUrlImg={onSetUrlImg}
+              id={props.id}
+              setErrorLoading={setError}
+              setCloseUploader={onCloseUploader}
+            />
           ) : null}
-          {respond && urlImg ? (
+          {respond && urlImg && !errorLoading ? (
             <div className={s.resume}>
               <span>Отправлено резюме </span>
               <a
