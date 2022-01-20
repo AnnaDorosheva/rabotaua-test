@@ -133,6 +133,8 @@ const Card = (props) => {
 
         {/* Buttons */}
         <div className={s.buttons}>
+
+          {/* Button "Откликнуться" */}
           {!dislike.dislike && !respond && !errorLoading && !urlImg ? (
             <button
               className={s.addButton}
@@ -149,9 +151,11 @@ const Card = (props) => {
               >
                 <i className={s.iconAddBatton}></i>Откликнуться
               </button>
-              <div>{errorLoading}</div>
+              <div className={s.errorLoading}><i className={s.iconErrorLoading}></i>{errorLoading}</div>
             </>
           ) : null}
+
+          {/* Follow/unfollow and disloke buttons: */}
           <button
             type="button"
             className={followBtnStyle}
