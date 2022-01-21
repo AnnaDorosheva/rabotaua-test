@@ -30,6 +30,7 @@
   z-index: 1;
   composes: cardContainer;
   background: rgba(239, 239, 243, 0.5);
+  top: -30px;
 }
 .cardContainerText {
   padding: 0px 20px 20px 20px;
@@ -253,9 +254,6 @@
   .bannerContainer {
     width: 340px;
     height: 50px;
-  }
-  .dislikeContainer {
-    top: -30px;
   }
   .vacancy {
     width: 230px;
