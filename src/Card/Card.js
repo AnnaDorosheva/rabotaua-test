@@ -27,6 +27,7 @@ const Card = (props) => {
       props.onLike(id);
     }
   };
+
   // Button "Откликнуться" state:
   const [respond, setRespond] = useState(false);
   const [urlImg, setUrlImg] = useState(null);
@@ -60,32 +61,32 @@ const Card = (props) => {
     if (urlImg) {
       props.onAddSummary(props.id, urlImg);
     }
-  }, [urlImg, props]);
+  }, [urlImg]);
 
   // get state from locasalStorage:
   useEffect(() => {
     if (props.followedCards.includes(props.id)) {
       setFollow((prev) => ({ follow: true }));
     }
-  }, [props]);
+  }, [props.followedCards]);
 
   useEffect(() => {
     if (props.dislikedCards.includes(props.id)) {
       setDislike((prev) => ({ dislike: true }));
     }
-  }, [props]);
+  }, [props.dislikedCards]);
 
   useEffect(() => {
     if (props.respondedCards.includes(props.id)) {
       setRespond((prev) => true);
     }
-  }, [props]);
+  }, [props.respondedCards]);
 
   useEffect(() => {
     props.summary.filter((item) =>
       item.id === props.id ? setUrlImg(item.img) : null
     );
-  }, [props]);
+  }, [props.summary]);
 
   // styles:
   const followBtnStyle = follow.follow ? s.unfavorite : s.favorite;
