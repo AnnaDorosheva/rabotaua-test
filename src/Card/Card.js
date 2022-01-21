@@ -27,8 +27,6 @@ const Card = (props) => {
       props.onLike(id);
     }
   };
-  // Uloader:
-  // const [isUploader, setUploader] = useState(false);
   // Button "Откликнуться" state:
   const [respond, setRespond] = useState(false);
   const [urlImg, setUrlImg] = useState(null);
@@ -38,7 +36,6 @@ const Card = (props) => {
   const handleRespond = (id) => {
     setRespond((prev) => !prev);
     if (respond) {
-      // setCloseUploader(true);
       props.onUnrespond(id);
     }
     if (!respond) {
@@ -63,32 +60,32 @@ const Card = (props) => {
     if (urlImg) {
       props.onAddSummary(props.id, urlImg);
     }
-  }, [urlImg]);
+  }, [urlImg, props]);
 
   // get state from locasalStorage:
   useEffect(() => {
     if (props.followedCards.includes(props.id)) {
       setFollow((prev) => ({ follow: true }));
     }
-  }, [props.followedCards]);
+  }, [props]);
 
   useEffect(() => {
     if (props.dislikedCards.includes(props.id)) {
       setDislike((prev) => ({ dislike: true }));
     }
-  }, [props.dislikedCards]);
+  }, [props]);
 
   useEffect(() => {
     if (props.respondedCards.includes(props.id)) {
       setRespond((prev) => true);
     }
-  }, [props.respondedCards]);
+  }, [props]);
 
   useEffect(() => {
     props.summary.filter((item) =>
       item.id === props.id ? setUrlImg(item.img) : null
     );
-  }, [props.summary]);
+  }, [props]);
 
   // styles:
   const followBtnStyle = follow.follow ? s.unfavorite : s.favorite;
