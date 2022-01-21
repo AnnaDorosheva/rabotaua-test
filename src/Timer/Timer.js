@@ -7,6 +7,7 @@ const Timer = (props) => {
   const [hours, setHours] = useState(null);
   const [minets, setMinets] = useState(null);
 
+
   const updateClockFace = (time) => {
     setDay((prev) => pad(Math.floor(time / (1000 * 60 * 60 * 24))));
     setHours((prev) =>
@@ -33,7 +34,7 @@ const Timer = (props) => {
   }, []);
 
   return (
-    <section className={s.time}>
+    <section>
       {day >= 1 ? (
         <div>
           <span>

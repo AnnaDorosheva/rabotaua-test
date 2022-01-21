@@ -77,7 +77,7 @@ const CardList = () => {
     <>
       <ul className={s.cardListContainer}>
         {info.map((item) => (
-          <li key={item.id} className={s.card}>
+          <li key={item.id}>
             <Card
               {...item}
               onFollow={handlFollow}

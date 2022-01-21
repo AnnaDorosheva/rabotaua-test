@@ -11,7 +11,7 @@ const Uploader = (props) => {
     }
   };
 
-  const validators = [maxDimensions(190, 108)];
+  const validators = [maxDimensions(1900, 1080)];
   const errors = {
     errors: {
       dimensions: "Файл слишком большой...",

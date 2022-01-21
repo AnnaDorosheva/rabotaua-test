@@ -7,9 +7,11 @@
   width: 750px;
   height: 370px;
   background-color: white;
+  box-shadow: 0px 10px 10px rgba(5, 5, 6, 0.05);
   border-radius: 5px;
   padding: 0;
   margin: 0;
+  margin-top: 30px;
 }
 .bannerContainer {
   height: 108px;
@@ -52,7 +54,7 @@
 .statusRespond {
   composes: status;
   color: gray;
-  background-color: #D5FFE6;
+  background-color: #d5ffe6;
 }
 .vacancy {
   font-family: Graphik-Bold-Web;
@@ -126,7 +128,18 @@
   color: red;
   margin-left: 6px;
 }
-/* buttons */
+.time {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  right: 20px;
+  top: 336px;
+  height: 20px;
+  width: 100px;
+  font-size: 14px;
+  margin: 0;
+}
+/* BUTTONS */
 .buttons {
   display: flex;
   width: 650px;
@@ -164,8 +177,8 @@
   position: absolute;
   font-size: 14px;
   width: 100%;
-  background-color: #FFD8D8;
-  box-shadow: 0px 10px 10px (5, 5, 6, 0.05) ;
+  background-color: #ffd8d8;
+  box-shadow: 0px 10px 10px (5, 5, 6, 0.05);
   bottom: -24px;
   left: 0;
   margin-top: 10px;
@@ -230,4 +243,56 @@
 }
 .dislike::before {
   background-image: url("../images/dislike.png");
+}
+/* Big size window */
+@media (min-width: 1300px) {
+  .cardContainer {
+    width: 340px;
+    height: 370px;
+  }
+  .bannerContainer {
+    width: 340px;
+    height: 50px;
+  }
+  .dislikeContainer {
+    top: -30px;
+  }
+  .vacancy {
+    width: 230px;
+  }
+  /* logo */
+  .logoContainer {
+    top: 100px;
+  }
+  .logo {
+    max-width: 60px;
+    max-height: 30px;
+  }
+  .aboutContainer {
+    overflow: hidden;
+  }
+  .errorLoading {
+    position: absolute;
+    font-size: 14px;
+    width: 100%;
+    background-color: #ffd8d8;
+    box-shadow: 0px 10px 10px (5, 5, 6, 0.05);
+    left: 0;
+    margin: 0;
+    bottom: 0;
+    padding: 6px 0 10px 0;
+  }
+  .time {
+    position: static;
+    display: flex;
+    justify-content: flex-start;
+    right: 20px;
+  }
+  .resume {
+    display: none;
+  }
+  .btnContainer {
+    position: absolute;
+    right: 10px;
+  }
 }

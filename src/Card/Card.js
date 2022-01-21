@@ -130,6 +130,9 @@ const Card = (props) => {
           </ul>
         </div>
 
+        {/* timer */}
+        <div className={s.time}>   <Timer time={props.time}/></div>
+
         {/* Buttons */}
         <div className={s.buttons}>
 
@@ -155,6 +158,7 @@ const Card = (props) => {
           ) : null}
 
           {/* Follow/unfollow and disloke buttons: */}
+          <div className={s.btnContainer}>
           <button
             type="button"
             className={followBtnStyle}
@@ -165,6 +169,7 @@ const Card = (props) => {
             className={likeBtnStyle}
             onClick={() => hendleLike(props.id)}
           ></button>
+          </div>
 
           {/* Uploader for resume */}
           {respond && !urlImg && !closeUploader ? (
@@ -189,9 +194,6 @@ const Card = (props) => {
             </div>
           ) : null}
         </div>
-
-        {/* timer */}
-        <Timer time={props.time} />
       </div>
     </div>
   );
