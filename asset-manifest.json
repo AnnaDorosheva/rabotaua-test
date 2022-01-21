@@ -1,16 +1,23 @@
 {
   "files": {
-    "main.css": "/rabotaua-test/static/css/main.d9f60c06.css",
-    "main.js": "/rabotaua-test/static/js/main.06a00317.js",
-    "static/js/787.72941ade.chunk.js": "/rabotaua-test/static/js/787.72941ade.chunk.js",
-    "static/media/card-banner.png": "/rabotaua-test/static/media/card-banner.4f37590f5d207b2674e2.png",
+    "static/js/0.eb9fd29e.chunk.js": "/rabotaua-test/static/js/0.eb9fd29e.chunk.js",
+    "static/js/0.eb9fd29e.chunk.js.map": "/rabotaua-test/static/js/0.eb9fd29e.chunk.js.map",
+    "main.css": "/rabotaua-test/static/css/main.38caa38b.chunk.css",
+    "main.js": "/rabotaua-test/static/js/main.a36355aa.chunk.js",
+    "main.js.map": "/rabotaua-test/static/js/main.a36355aa.chunk.js.map",
+    "runtime~main.js": "/rabotaua-test/static/js/runtime~main.e0ca8e74.js",
+    "runtime~main.js.map": "/rabotaua-test/static/js/runtime~main.e0ca8e74.js.map",
+    "ucare-panel-chunk.js": "/rabotaua-test/static/js/ucare-panel-chunk.0445929f.chunk.js",
+    "ucare-panel-chunk.js.map": "/rabotaua-test/static/js/ucare-panel-chunk.0445929f.chunk.js.map",
+    "ucare-widget-chunk.js": "/rabotaua-test/static/js/ucare-widget-chunk.9b6fccc4.chunk.js",
+    "ucare-widget-chunk.js.map": "/rabotaua-test/static/js/ucare-widget-chunk.9b6fccc4.chunk.js.map",
+    "static/js/5.a68ee6ed.chunk.js": "/rabotaua-test/static/js/5.a68ee6ed.chunk.js",
+    "static/js/5.a68ee6ed.chunk.js.map": "/rabotaua-test/static/js/5.a68ee6ed.chunk.js.map",
+    "static/js/6.fefb2db8.chunk.js": "/rabotaua-test/static/js/6.fefb2db8.chunk.js",
+    "static/js/6.fefb2db8.chunk.js.map": "/rabotaua-test/static/js/6.fefb2db8.chunk.js.map",
     "index.html": "/rabotaua-test/index.html",
-    "main.d9f60c06.css.map": "/rabotaua-test/static/css/main.d9f60c06.css.map",
-    "main.06a00317.js.map": "/rabotaua-test/static/js/main.06a00317.js.map",
-    "787.72941ade.chunk.js.map": "/rabotaua-test/static/js/787.72941ade.chunk.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.d9f60c06.css",
-    "static/js/main.06a00317.js"
-  ]
+    "precache-manifest.0e410340e8652664f38309e2fc7fa729.js": "/rabotaua-test/precache-manifest.0e410340e8652664f38309e2fc7fa729.js",
+    "service-worker.js": "/rabotaua-test/service-worker.js",
+    "static/css/main.38caa38b.chunk.css.map": "/rabotaua-test/static/css/main.38caa38b.chunk.css.map"
+  }
 }
