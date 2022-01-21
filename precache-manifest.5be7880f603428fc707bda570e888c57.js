@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ec94876f2ed2e86ce6ff20ea5a01f4b3",
+    "revision": "5e71750e54fa4e5a62771aceb2dd0c1f",
     "url": "/rabotaua-test/index.html"
   },
   {
-    "revision": "9597cc0e0e257218cd75",
-    "url": "/rabotaua-test/static/css/main.38caa38b.chunk.css"
+    "revision": "52664719306c75435470",
+    "url": "/rabotaua-test/static/css/main.197d1eaa.chunk.css"
   },
   {
     "revision": "413ce01d553d26a40ea5",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rabotaua-test/static/js/6.fefb2db8.chunk.js"
   },
   {
-    "revision": "9597cc0e0e257218cd75",
+    "revision": "52664719306c75435470",
     "url": "/rabotaua-test/static/js/main.a36355aa.chunk.js"
   },
   {
