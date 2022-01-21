@@ -4,6 +4,7 @@ import Timer from "../Timer/Timer";
 import Uploader from "../Uploader/Uploader";
 
 const Card = (props) => {
+  
   // Follow / unfollow button state:
   const [follow, setFollow] = useState({ follow: false, id: null });
 
@@ -61,32 +62,32 @@ const Card = (props) => {
     if (urlImg) {
       props.onAddSummary(props.id, urlImg);
     }
-  }, [urlImg]);
+  }, [urlImg])
 
   // get state from locasalStorage:
   useEffect(() => {
     if (props.followedCards.includes(props.id)) {
       setFollow((prev) => ({ follow: true }));
     }
-  }, [props.followedCards]);
+  }, [props.followedCards, props.id]);
 
   useEffect(() => {
     if (props.dislikedCards.includes(props.id)) {
       setDislike((prev) => ({ dislike: true }));
     }
-  }, [props.dislikedCards]);
+  }, [props.dislikedCards, props.id]);
 
   useEffect(() => {
     if (props.respondedCards.includes(props.id)) {
       setRespond((prev) => true);
     }
-  }, [props.respondedCards]);
+  }, [props.respondedCards, props.id]);
 
   useEffect(() => {
     props.summary.filter((item) =>
       item.id === props.id ? setUrlImg(item.img) : null
     );
-  }, [props.summary]);
+  }, [props.summary, props.id]);
 
   // styles:
   const followBtnStyle = follow.follow ? s.unfavorite : s.favorite;

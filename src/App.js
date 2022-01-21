@@ -1,3 +1,4 @@
+import React from "react";
 import Header from "./Header/Header";
 import s from "./App.module.css";
 import CardList from "./CardList/CardList";
