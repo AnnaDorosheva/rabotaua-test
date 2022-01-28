@@ -2,7 +2,7 @@
   "files": {
     "static/js/0.eb9fd29e.chunk.js": "/rabotaua-test/static/js/0.eb9fd29e.chunk.js",
     "static/js/0.eb9fd29e.chunk.js.map": "/rabotaua-test/static/js/0.eb9fd29e.chunk.js.map",
-    "main.css": "/rabotaua-test/static/css/main.197d1eaa.chunk.css",
+    "main.css": "/rabotaua-test/static/css/main.363a1d72.chunk.css",
     "main.js": "/rabotaua-test/static/js/main.a36355aa.chunk.js",
     "main.js.map": "/rabotaua-test/static/js/main.a36355aa.chunk.js.map",
     "runtime~main.js": "/rabotaua-test/static/js/runtime~main.e0ca8e74.js",
@@ -16,8 +16,8 @@
     "static/js/6.fefb2db8.chunk.js": "/rabotaua-test/static/js/6.fefb2db8.chunk.js",
     "static/js/6.fefb2db8.chunk.js.map": "/rabotaua-test/static/js/6.fefb2db8.chunk.js.map",
     "index.html": "/rabotaua-test/index.html",
-    "precache-manifest.5be7880f603428fc707bda570e888c57.js": "/rabotaua-test/precache-manifest.5be7880f603428fc707bda570e888c57.js",
+    "precache-manifest.f3506d67be42108f860ac67da9d249c6.js": "/rabotaua-test/precache-manifest.f3506d67be42108f860ac67da9d249c6.js",
     "service-worker.js": "/rabotaua-test/service-worker.js",
-    "static/css/main.197d1eaa.chunk.css.map": "/rabotaua-test/static/css/main.197d1eaa.chunk.css.map"
+    "static/css/main.363a1d72.chunk.css.map": "/rabotaua-test/static/css/main.363a1d72.chunk.css.map"
   }
 }
